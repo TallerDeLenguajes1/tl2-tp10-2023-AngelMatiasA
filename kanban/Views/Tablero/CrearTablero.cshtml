@@ -6,9 +6,19 @@
 <h1 class="text-center">Crear Tablero</h1>
 
 <form asp-controller = "Tablero" asp-action="CrearTablero" method="post" class="form-view">
-    <div class="form-group">
-        @* <label class="form-label" asp-for="@Model.Nombre_de_Tablero">Nombre </label> *@
-        @* <input asp-for = "@Model.Nombre_de_Tablero" placeholder = "Ingrese su nombre" class="form-control"> *@
+    <div class="form-group"> 
+
+        <label asp-for="@Model.Nombre" class="form-label">Nombre</label>
+        <input asp-for="@Model.Nombre" placeholder="Ingrese el Nombre del Tablero" class="form-control">
+
+        <label asp-for="@Model.Id_usuario_propietario" class="form-label">Id usuario propietario</label>
+        <input asp-for="@Model.Id_usuario_propietario" placeholder="Ingrese el Id_usuario_propietario" class="form-control">
+
+        <label asp-for="@Model.Descripcion" class="form-label">Descripcion</label>
+        <input asp-for="@Model.Descripcion" placeholder="Ingrese la Descripcion del Tablero" class="form-control">
+
+       
+
     </div>
     
     <input type="submit" class="btn btn-primary" value="Enviar">

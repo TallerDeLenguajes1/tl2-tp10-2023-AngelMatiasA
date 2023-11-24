@@ -30,6 +30,8 @@
             <tr>
                 <td hidden>@Tablero.Id</td>
                 <td>@Tablero.Nombre</td>
+                <td>@Tablero.Id_usuario_propietario</td>
+                <td>@Tablero.Descripcion</td>
                 <td>
                     <a asp-controller="Tablero" asp-action="ActualizarTablero" asp-route-idTablero="@Tablero.Id">Editar</a>
                     <a asp-controller="Tablero" asp-action="Eliminar" asp-route-idTablero="@Tablero.Id"

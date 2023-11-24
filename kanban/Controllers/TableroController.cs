@@ -36,10 +36,8 @@ public class TableroController : Controller
         return View(TableroRepo.MostrarPorId(idTablero));
     }
 
-
-
     [HttpPost]
-    public IActionResult ActualizarTablero1( Tablero TableroModificar){
+    public IActionResult ActualizarTablero( Tablero TableroModificar){
         TableroRepo.ModificarTablero( TableroModificar.Id, TableroModificar);
         return RedirectToAction("Index");
     }

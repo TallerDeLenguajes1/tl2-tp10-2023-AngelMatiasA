@@ -5,14 +5,21 @@
 <h1 class="text-center">Actualizar Tablero</h1>
 <section>
     <article>
-        @if (String.IsNullOrEmpty(Model.Nombre))
+        @if (String.IsNullOrEmpty(Model.Nombre) || Model.Id == 0)
         {
            <p><strong>ERROR 404</strong></p>
         }else{
-            <form asp-controller="Tablero" asp-action="ActualizarTablero1" method="post" class="form-view">
+            <form asp-controller="Tablero" asp-action="ActualizarTablero" method="post" class="form-view">
                 <label class="form-label">Nombre</label>
-                @* <input asp-for="@Model.Nombre_de_Tablero" value="@Model.Nombre_de_Tablero" class="form-control">
-                <input hidden asp-for="@Model.Id"> *@
+                <input asp-for="@Model.Nombre" value="@Model.Nombre" class="form-control">
+
+                <label class="form-label">Id usuario Propietario</label>
+                <input asp-for="@Model.Id_usuario_propietario" value="@Model.Id_usuario_propietario" class="form-control">
+
+                <label class="form-label">Descripcion</label>
+                <input asp-for="@Model.Descripcion" value="@Model.Descripcion" class="form-control">
+
+                <input hidden asp-for="@Model.Id">
                 <input type="submit" class="btn btn-outline-success">
             </form>
         }
