@@ -4,7 +4,7 @@ namespace Repositorios;
 
 public class UsuarioRepository
 {
-    private string connectionString = @"Data Source = DB/kanban.db;Initial Catalog=Northwind;Integrated Security=true";
+    private string connectionString = @"Data Source =  DB/kanban.db;Initial Catalog=Northwind;Integrated Security=true";
 
 /*
 ● Crear un nuevo usuario. (recibe un objeto Usuario)
@@ -34,7 +34,7 @@ public class UsuarioRepository
         return nuevoUsuario ;
     }
 
-    public UsuarioPost ModificarUsuario(int idUsuario, UsuarioPost usuarioModificar){
+    public Usuario ModificarUsuario(int idUsuario, Usuario usuarioModificar){
         int rowAffected = 0;
         using(var connection = new SQLiteConnection(connectionString))
         {
@@ -81,7 +81,7 @@ public class UsuarioRepository
         return usuarios;
     }
 
-    public Usuario MostrarPorId(int idUsuario){
+    public Usuario MostrarUsuarioPorId(int idUsuario){
         Usuario buscado = new Usuario();
         using(var connection = new SQLiteConnection(connectionString))
         {

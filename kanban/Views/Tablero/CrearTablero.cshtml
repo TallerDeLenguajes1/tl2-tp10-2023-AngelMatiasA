@@ -1,0 +1,15 @@
+@model Tablero
+@using Models
+
+@{ViewData["title"]="Crear Tablero";}
+
+<h1 class="text-center">Crear Tablero</h1>
+
+<form asp-controller = "Tablero" asp-action="CrearTablero" method="post" class="form-view">
+    <div class="form-group">
+        @* <label class="form-label" asp-for="@Model.Nombre_de_Tablero">Nombre </label> *@
+        @* <input asp-for = "@Model.Nombre_de_Tablero" placeholder = "Ingrese su nombre" class="form-control"> *@
+    </div>
+    
+    <input type="submit" class="btn btn-primary" value="Enviar">
+</form>

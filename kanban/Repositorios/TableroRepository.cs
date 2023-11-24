@@ -15,7 +15,7 @@ Crear un nuevo tablero (devuelve un objeto Tablero)
 list de tableros)
 ● Eliminar un tablero por ID
 */
-    public TableroPost CrearTablero(TableroPost nuevoTablero){
+    public Tablero CrearTablero(Tablero nuevoTablero){
         int rowAffected = 0;
         using(var connection = new SQLiteConnection(connectionString))
         {
