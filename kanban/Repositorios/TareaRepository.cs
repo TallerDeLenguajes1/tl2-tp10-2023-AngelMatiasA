@@ -8,7 +8,7 @@ public class TareaRepository
 
 
 
-    public TareaPost CrearTarea(int idTablero, TareaPost nuevaTarea){
+    public Tarea CrearTarea(int idTablero, Tarea nuevaTarea){
         int rowAffected = 0;
         using(var connection = new SQLiteConnection(connectionString))
         {
@@ -69,9 +69,7 @@ public class TareaRepository
     {
         connection.Open();
 
-        string queryString = @"UPDATE Tarea SET id_tablero = @Id_Tablero, Nombre = @Nombre,"+
-        " Estado = @Estado, Descripcion = @Descripcion, Color = @Color, "+
-        "id_usuario_asignado = @Id_usuario_asignado WHERE Id = @idTarea;";
+        string queryString = @"UPDATE Tarea SET id_tablero = @Id_Tablero, nombre = @Nombre, estado = @Estado, descripcion = @Descripcion, color = @Color, id_usuario_asignado = @Id_usuario_asignado WHERE id = @idTarea;";
         var command = new SQLiteCommand(queryString, connection);
          command.Parameters.Add(new SQLiteParameter("@idTarea", idTarea));
          command.Parameters.Add(new SQLiteParameter("@Id_Tablero", TareaModificar.Id_Tablero));
@@ -161,6 +159,7 @@ de tareas)
 
         return Tareas;
     }
+    
      public List<Tarea> MostrarTareasPorUsuario(int idUsuario){
         List<Tarea> Tareas = new List<Tarea>();
         using(var connection = new SQLiteConnection(connectionString))

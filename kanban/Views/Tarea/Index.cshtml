@@ -1,0 +1,50 @@
+@{
+    ViewData["Title"] = "Tareas";
+}
+
+@model List<Tarea>
+@using Models
+
+
+<h2 text-aling:center>Listado de Tareas</h2>
+
+<nav>
+    <ul>
+        <li>
+             <a asp-controller="Tarea" asp-action="CrearTarea">Crear Tarea</a>
+        </li>
+    </ul>
+</nav>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th hidden>ID</th>
+            <th>Id Tablero</th>
+            <th>Id usuario asign.</th>
+            <th>Nombre</th>
+            <th>Color</th>
+            <th>Estado</th>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Tarea in Model)
+        {
+            <tr>
+                <td hidden>@Tarea.Id</td>
+                <td>@Tarea.Id_Tablero</td>
+                <td>@Tarea.Id_usuario_asignado</td>
+                <td>@Tarea.Nombre</td>
+                <td>@Tarea.Color</td>
+                <td>@Tarea.Estado</td>
+                <td>@Tarea.Descripcion</td>
+                <td>
+                    <a asp-controller="Tarea" asp-action="ActualizarTarea" asp-route-idTarea="@Tarea.Id">Editar</a>
+                    <a asp-controller="Tarea" asp-action="Eliminar" asp-route-idTarea="@Tarea.Id"
+                        onclick="return confirm('¿Estas seguro que quieres eliminar el elemento?')">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

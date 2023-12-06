@@ -43,7 +43,7 @@ list de tableros)
     {
         connection.Open();
 
-        string queryString = @"UPDATE Tablero SET Nombre = @nombreNuevo, Descripcion = @descripcionNueva, Id_usuario_propietario = @idUsuarioNuevo WHERE Id = @idTablero;";
+        string queryString = @"UPDATE Tablero SET nombre = @nombreNuevo, descripcion = @descripcionNueva, id_usuario_propietario = @idUsuarioNuevo WHERE id = @idTablero;";
         var command = new SQLiteCommand(queryString, connection);
 
         command.Parameters.Add(new SQLiteParameter("@idTablero", idTablero));
@@ -116,6 +116,7 @@ list de tableros)
 
         return buscado;
     }
+    
 
     /*● Listar todos los tableros de un usuario específico. (recibe un IdUsuario, devuelve un
 list de tableros)*/

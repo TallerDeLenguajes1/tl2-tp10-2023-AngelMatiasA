@@ -1,0 +1,44 @@
+@model Tarea
+@using Models
+
+@{ViewData["title"]="Crear Tarea";}
+
+<h1 class="text-center">Crear Tarea</h1>
+
+<form asp-controller = "Tarea" asp-action="CrearTarea" method="post" class="form-view">
+    <div class="form-group"> 
+
+        <label asp-for="@Model.Nombre" class="form-label">Nombre</label>
+        <input asp-for="@Model.Nombre" placeholder="Ingrese el Nombre del Tarea" class="form-control">
+
+        <label asp-for="@Model.Id_Tablero"class="form-label">Id Tablero</label>
+        <input asp-for="@Model.Id_Tablero" value="@Model.Id_Tablero" class="form-control">
+
+        <label asp-for="@Model.Id_usuario_asignado" class="form-label">Id usuario propietario</label>
+        <input asp-for="@Model.Id_usuario_asignado" placeholder="Ingrese el Id_usuario_propietario" class="form-control">
+
+        <label asp-for="@Model.Descripcion" class="form-label">Descripcion</label>
+        <input asp-for="@Model.Descripcion" placeholder="Ingrese la Descripcion del Tarea" class="form-control">
+
+        <label asp-for="@Model.Estado" class="form-label"> Ingrese el Valor del estado de la tarea </label>
+        <select asp-for="@Model.Estado" class="form-control" id="">
+            <option value="0">Pendiente</option> 
+            <option value="1">En Proceso</option>
+            <option value="2">En Revision</option>
+            <option value="3">Rralizada</option>
+        </select>
+         <label class="form-label">Color</label>
+                <select asp-for="@Model.Color"  class="form-control">
+                    <option value="Amarillo">Amarillo</option> 
+                    <option value="Naranja">Naranja</option> 
+                    <option value="Celeste">Celeste</option> 
+                    <option value="Rojo">Rojo</option> 
+                </select>
+        
+
+       
+
+    </div>
+    
+    <input type="submit" class="btn btn-primary" value="Enviar">
+</form>

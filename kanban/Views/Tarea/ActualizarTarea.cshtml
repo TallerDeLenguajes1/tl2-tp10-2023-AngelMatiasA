@@ -1,0 +1,46 @@
+@model Tarea
+@using Models
+@{ViewData["title"]="Actualizar Tarea";}
+
+<h1 class="text-center">Actualizar Tarea</h1>
+<section>
+    <article>
+        @if (Model.Id == 0)
+        {
+           <p><strong>ERROR 404</strong></p>
+        }else{
+            <form asp-controller="Tarea" asp-action="ActualizarTarea" method="post" class="form-view">
+                <label class="form-label">Nombre</label>
+                <input asp-for="@Model.Nombre" value="@Model.Nombre" class="form-control">
+                
+                <label class="form-label">Id Tablero</label>
+                <input asp-for="@Model.Id_Tablero" value="@Model.Id_Tablero" class="form-control">
+
+                <label class="form-label">Id usuario asignado</label>
+                <input asp-for="@Model.Id_usuario_asignado" value="@Model.Id_usuario_asignado" class="form-control">
+
+                <label class="form-label">Descripcion</label>
+                <input asp-for="@Model.Descripcion" value="@Model.Descripcion" class="form-control">
+
+                <label asp-for="@Model.Estado" class="form-label"> Ingrese el Valor del estado de la tarea </label>
+                <select asp-for="@Model.Estado" class="form-control" id="">
+                    <option value="0">Pendiente</option> 
+                    <option value="1">En Proceso</option>
+                    <option value="2">En Revision</option>
+                    <option value="3">Rralizada</option>
+                </select>
+
+                <label class="form-label">Color</label>
+                <select asp-for="@Model.Color"  class="form-control">
+                    <option value="Amarillo">Amarillo</option> 
+                    <option value="Naranja">Naranja</option> 
+                    <option value="Celeste">Celeste</option> 
+                    <option value="Rojo">Rojo</option> 
+                </select>
+
+                <input hidden asp-for="@Model.Id">
+                <input type="submit" class="btn btn-outline-success" value="ACTUALIZAR">
+            </form>
+        }
+    </article>
+</section>
