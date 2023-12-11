@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using Repositorios;
-namespace Controllers;
+namespace kanban.Controllers;
 
 public class UsuarioController : Controller
 {
@@ -32,7 +32,7 @@ public class UsuarioController : Controller
     }
 
     [HttpPost]
-    public IActionResult CrearUsuario(UsuarioPost nuevo){
+    public IActionResult CrearUsuario(Usuario nuevo){
         usuarioRepo.CrearUsuario(nuevo);
         return RedirectToAction("Index");
     }
