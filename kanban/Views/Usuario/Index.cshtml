@@ -3,8 +3,7 @@
 }
 
 @model List<Usuario>
-@using Models
-
+@using kanban.ViewModels
 
 <h2 text-aling:center>Listado de Usuarios</h2>
 
@@ -21,6 +20,9 @@
         <tr>
             <th hidden>ID</th>
             <th>Nombre</th>
+            <th>Rol</th>
+            <th>Modificar</th>
+            <th>Eliminar</th>
         </tr>
     </thead>
     <tbody>
@@ -29,8 +31,12 @@
             <tr>
                 <td hidden>@usuario.Id</td>
                 <td>@usuario.Nombre_de_usuario</td>
+                <td>@usuario.RolUsuario</td>
                 <td>
                     <a asp-controller="Usuario" asp-action="ActualizarUsuario" asp-route-idUsuario="@usuario.Id">Editar</a>
+
+                </td>
+                <td>
                     <a asp-controller="Usuario" asp-action="Eliminar" asp-route-idUsuario="@usuario.Id"
                         onclick="return confirm('¿Estas seguro que quieres eliminar el elemento?')">Eliminar</a>
                 </td>

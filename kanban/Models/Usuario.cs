@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using kanban.ViewModels;
 
-namespace Models; 
+namespace kanban.Models; 
 public enum Rol{
     admin,
     operador

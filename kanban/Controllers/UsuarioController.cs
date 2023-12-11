@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using Models;
+using kanban.Models;
+using kanban.ViewModels;
 using Repositorios;
 namespace kanban.Controllers;
 
