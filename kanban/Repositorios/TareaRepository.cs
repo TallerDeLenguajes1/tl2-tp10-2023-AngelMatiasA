@@ -1,5 +1,5 @@
 using System.Data.SQLite;
-using Models;
+using kanban.Models;
 namespace Repositorios;
 
 public class TareaRepository

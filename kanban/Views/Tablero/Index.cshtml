@@ -2,8 +2,8 @@
     ViewData["Title"] = "Tableros";
 }
 
-@model List<Tablero>
-@using Models
+@model ListarTableroViewModel
+@using kanban.ViewModels
 
 
 <h2 text-aling:center>Listado de Tableros</h2>
@@ -26,12 +26,12 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var Tablero in Model)
+        @foreach (var Tablero in Model.ListarTableroVM)
         {
             <tr>
                 <td hidden>@Tablero.Id</td>
                 <td>@Tablero.Nombre</td>
-                <td>@Tablero.Id_usuario_propietario</td>
+                <td>@Tablero.IdUsuarioPropietario</td>
                 <td>@Tablero.Descripcion</td>
                 <td>
                     <a asp-controller="Tablero" asp-action="ActualizarTablero" asp-route-idTablero="@Tablero.Id">Editar</a>

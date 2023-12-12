@@ -1,5 +1,5 @@
 using System; 
-namespace Models; 
+namespace kanban.Models; 
 public class TareaPost{
 
     public string? Nombre {get; set;}

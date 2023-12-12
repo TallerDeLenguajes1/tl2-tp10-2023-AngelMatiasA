@@ -1,5 +1,5 @@
-@model Tarea
-@using Models
+@model ModificarTareaViewModel
+@using kanban.ViewModels
 @{ViewData["title"]="Actualizar Tarea";}
 
 <h1 class="text-center">Actualizar Tarea</h1>
@@ -14,10 +14,10 @@
                 <input asp-for="@Model.Nombre" value="@Model.Nombre" class="form-control">
                 
                 <label class="form-label">Id Tablero</label>
-                <input asp-for="@Model.Id_Tablero" value="@Model.Id_Tablero" class="form-control">
+                <input asp-for="@Model.IdTablero" value="@Model.IdTablero" class="form-control">
 
                 <label class="form-label">Id usuario asignado</label>
-                <input asp-for="@Model.Id_usuario_asignado" value="@Model.Id_usuario_asignado" class="form-control">
+                <input asp-for="@Model.IdUsuarioAsingnado" value="@Model.IdUsuarioAsingnado" class="form-control">
 
                 <label class="form-label">Descripcion</label>
                 <input asp-for="@Model.Descripcion" value="@Model.Descripcion" class="form-control">

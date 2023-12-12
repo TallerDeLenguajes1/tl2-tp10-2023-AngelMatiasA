@@ -2,8 +2,8 @@
     ViewData["Title"] = "Tareas";
 }
 
-@model List<Tarea>
-@using Models
+@model ListarTareasViewModel
+@using kanban.ViewModels
 
 
 <h2 text-aling:center>Listado de Tareas</h2>
@@ -29,19 +29,19 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var Tarea in Model)
+        @foreach (var Tarea in Model.ListarTareasVM)
         {
             <tr>
-                <td hidden>@Tarea.Id</td>
+                <td hidden>@Tarea.Id_tarea</td>
                 <td>@Tarea.Id_Tablero</td>
-                <td>@Tarea.Id_usuario_asignado</td>
+                <td>@Tarea.Id_Usuario_Asingnado</td>
                 <td>@Tarea.Nombre</td>
                 <td>@Tarea.Color</td>
                 <td>@Tarea.Estado</td>
                 <td>@Tarea.Descripcion</td>
                 <td>
-                    <a asp-controller="Tarea" asp-action="ActualizarTarea" asp-route-idTarea="@Tarea.Id">Editar</a>
-                    <a asp-controller="Tarea" asp-action="Eliminar" asp-route-idTarea="@Tarea.Id"
+                    <a asp-controller="Tarea" asp-action="ActualizarTarea" asp-route-idTarea="@Tarea.Id_tarea">Editar</a>
+                    <a asp-controller="Tarea" asp-action="Eliminar" asp-route-idTarea="@Tarea.Id_tarea"
                         onclick="return confirm('¿Estas seguro que quieres eliminar el elemento?')">Eliminar</a>
                 </td>
             </tr>

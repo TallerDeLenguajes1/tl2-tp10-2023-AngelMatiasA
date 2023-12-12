@@ -1,18 +1,29 @@
-@model Usuario
-@using Models
+@model ActualizarUsuarioViewModel
+@using kanban.ViewModels
 @{ViewData["title"]="Actualizar usuario";}
 
 <h1 class="text-center">Actualizar usuario</h1>
 <section>
     <article>
-        @if (String.IsNullOrEmpty(Model.Nombre_de_usuario))
+        @if (String.IsNullOrEmpty(Model.Nombre))
         {
            <p><strong>ERROR 404</strong></p>
         }else{
             <form asp-controller="Usuario" asp-action="ActualizarUsuario1" method="post" class="form-view">
                 <label class="form-label">Nombre</label>
-                <input asp-for="@Model.Nombre_de_usuario" value="@Model.Nombre_de_usuario" class="form-control">
+                <input asp-for="@Model.Nombre" value="@Model.Nombre" class="form-control">
                 <input hidden asp-for="@Model.Id">
+                <div class="form-group">
+        <label asp-for="@Model.Contrasenia"></label>
+        <input asp-for="@Model.Contrasenia" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Rol</label>
+         <select asp-for="@Model.RolUsuario" class="form-control">
+            <option value="0" >Administrador</option>
+            <option value="1" >Operador</option>
+        </select>
+    </div>
                 <input type="submit" class="btn btn-outline-success">
             </form>
         }

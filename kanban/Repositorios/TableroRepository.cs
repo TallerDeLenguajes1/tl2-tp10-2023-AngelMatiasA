@@ -1,5 +1,5 @@
 using System.Data.SQLite;
-using Models;
+using kanban.Models;
 namespace Repositorios;
 
 public class TableroRepository
@@ -81,9 +81,9 @@ list de tableros)
             }
             connection.Close();
         }
-        if(Tableros.Count == 0){
-            return null;
-        }
+        // if(Tableros.Count == 0){
+        //     return null;
+        // }
 
         return Tableros;
     }

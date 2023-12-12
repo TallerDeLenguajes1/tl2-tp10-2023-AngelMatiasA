@@ -80,9 +80,7 @@ public List<Usuario> MostrarUsuarios(){
         }
         connection.Close();
     }
-    if(usuarios.Count == 0){
-        return null;
-    }
+    
     return usuarios;
 }
 
