@@ -16,4 +16,24 @@ public class Usuario{
     public string? Contrasenia {get; set;}
     public Rol? RolUsuario {get; set;}
 
+      public Usuario(CrearUsuarioViewModel usuario){
+        Nombre_de_usuario = usuario.Nombre;
+        Contrasenia = usuario.Contrasenia;
+        RolUsuario = usuario.RolUsuario;
+    }
+
+    public Usuario(ActualizarUsuarioViewModel usuario){
+        Id = usuario.Id;
+        Nombre_de_usuario = usuario.Nombre;
+        Contrasenia = usuario.Contrasenia;
+        RolUsuario = usuario.RolUsuario;
+    }
+
+
+    public Usuario(){
+        
+    }
+
+
+
 }

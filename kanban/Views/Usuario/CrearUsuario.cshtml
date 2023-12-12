@@ -1,15 +1,31 @@
-@model Usuario
-@using Models
+@model kanban.ViewModels.CrearUsuarioViewModel
 
-@{ViewData["title"]="Crear usuario";}
+@{ViewData["Title"] = "Crear usuario";}
 
-<h1 class="text-center">Crear usuario</h1>
+<h1 class="text-center">@ViewData["Title"]</h1>
 
-<form asp-controller = "Usuario" asp-action="CrearUsuario" method="post" class="form-view">
+<form asp-controller="Usuario" asp-action="CrearUsuario" method="post">
     <div class="form-group">
-        <label class="form-label" asp-for="@Model.Nombre_de_usuario">Nombre </label>
-        <input asp-for = "@Model.Nombre_de_usuario" placeholder = "Ingrese su nombre" class="form-control">
+        <label asp-for="@Model.Nombre"></label>
+        <input asp-for="@Model.Nombre" class="form-control"/>
+        <span asp-validation-for="@Model.Nombre" class="text-danger"></span>    
     </div>
-    
-    <input type="submit" class="btn btn-primary" value="Enviar">
+    <div class="form-group">
+        <label asp-for="@Model.Contrasenia"></label>
+        <input asp-for="@Model.Contrasenia" class="form-control"/>
+        <span asp-validation-for="@Model.Contrasenia" class="text-danger"></span>    
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.RolUsuario"></label>
+        <select asp-for="@Model.RolUsuario" class="form-control">
+            <option value="@Rol.admin">administrador</option>
+            <option value="@Rol.operador">operador</option>
+        </select>
+        <span asp-validation-for="@Model.RolUsuario" class="text-danger"></span>    
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

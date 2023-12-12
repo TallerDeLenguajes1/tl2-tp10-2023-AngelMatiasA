@@ -1,5 +1,6 @@
 using System.Data.SQLite;
 using kanban.Models;
+
 namespace Repositorios;
 
 public class UsuarioRepository
